@@ -1,0 +1,105 @@
+.navbar #tabmenu .custom-nav .nav-item a {
+    color: #fff;
+    padding: 10px;
+}
+
+.navbar #tabmenu .custom-nav .nav-item a:hover {
+    color: #F0AAB1;
+}
+
+@media only screen and (max-width: 2000px) {
+    .navbar-portal {
+        font-size: 60px;
+        margin-left: 30px;
+    }
+    .image-fluid {
+        border-radius: 50%;
+        height: 120px;
+        width: 120px;
+    }
+}
+
+@media only screen and (max-width: 1500px) {
+    .navbar-portal {
+        font-size: 40px;
+        margin-left: 20px;
+    }
+    .image-fluid {
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .navbar-portal {
+        font-size: 35px;
+        margin-left: 0px;
+    }
+    .image-fluid {
+        height: 70px;
+        width: 70px;
+        border-radius: 50%;
+    }
+}
+
+body {
+    background: linear-gradient(to right,);
+    margin-left: 50px;
+}
+
+label {
+    display: inline-block;
+    width: 400px;
+    padding: 6px;
+    font-size: medium;
+    margin-left: 10%;
+    font-weight: bold;
+}
+
+input {
+    padding: 8px;
+    border-radius: 4px;
+}
+
+h3 {
+    background-color: #e93030;
+    padding: 15px;
+}
+
+select {
+    padding: 8px;
+    width: 180px;
+}
+
+h4 {
+    background-color: rgb(252, 203, 203);
+    padding: 6px;
+}
+
+h5 {
+    text-align: center;
+    color: black;
+}
+
+button {
+    border-radius: 25px;
+    background-color: rgb(250, 13, 4);
+    color: white;
+    padding: 12px 10px;
+    cursor: pointer;
+    -webkit-border-radius: 25p;
+    -moz-border-radius: 25p;
+    -ms-border-radius: 25p;
+    -o-border-radius: 25p;
+    width: 200px;
+    margin-left: 0px;
+}
+
+textarea {
+    border-radius: 4px;
+}
+select{
+    border-radius: 4px;
+
+}

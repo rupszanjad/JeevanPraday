@@ -1,0 +1,231 @@
+<!DOCTYPE HTML>
+<html>
+<title>Jeevanpraday|camps</title>
+
+<head>
+    
+    <LINK rel="stylesheet" href="../stylesheets/user.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+
+    </style>
+</head>
+
+
+<style>
+    .navbar #tabmenu .custom-nav .nav-item a {
+        color: #fff;
+        padding: 10px;
+    }
+    
+    .navbar #tabmenu .custom-nav .nav-item a:hover {
+        color: #F0AAB1;
+    }
+    
+
+</style>
+
+
+
+<body>
+
+    <!-- start navigation -->
+    <div>
+       
+        <nav class="navbar navbar-expand-lg navbar-dark bg-danger pl-5 fixed-top" style="background-color: rgb(245, 10, 10);">
+            <img src="../images/logo.jpg" class="image-fluid" style="height:80px; width:80px; border-radius: 80px;" />
+            <a href="/" class="navbar-portal" style="text-decoration: none; color:white; font-size:40px;">जीवनप्रदाय <br><h6 style="margin-left: 0px; color: black; font: italic;">Innovation Responsibility And Humanism</h6></a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#tabmenu">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+            <div class="collapse navbar-collapse" id="tabmenu">
+                <ul class="navbar-nav pl-5 custom-nav" style="margin-left:6%; font-size:20px; color:rgb(8, 8, 7);">
+                    <li class="nav-item"><a href="/" class="nav-link">Home</a> </li>
+                    <li class="nav-item"><a href="/logout" class="nav-link">Log Out</a></li>
+                    <li class="nav-item" style="float: right;"><a href=" #" class="nav-link">Logged in as: <% if(loginUser) { %> <%= loginUser %> <% } %> </a></li>
+
+                </ul>
+            </div>
+        </nav>
+
+    </div>
+    <!-- end navigation -->
+<div>
+    <div class="container-fluid">
+        <div class="row justify-content-center" style="margin-top:100px;">
+            <div class="col-md-9 thumb">
+
+        <div class="container-fluid">
+            <div class="row " style="margin-top:20px;">
+
+                <div class="col-lg-12 ">
+<div class="jumbotron">
+                    <h5>Camps that are going to held earlier are listed below you can register for specific camps by clicking on register button</h5><br><br>
+                </div>
+                    <form action="/camp" method="POST">
+                        <h6>Filter Camp By District</h6>
+                        <input placeholder="Enter District " name="dist" style="padding: 4px;">
+                        <button class="btn btn-primary" onclick="window.location.href='/camp';" style="margin-left: 10px; border-radius: 8px; width: 100px;">Search</button><br>
+                    </form>
+                    </br>
+
+                </div>
+
+            </div>
+        </div>
+        </div>
+        </div><br>
+    
+        <div class="data-tables" style="margin-left:50px; margin-right: 50px; margin-bottom: 100px;">
+            <table id="dataTable" class="text-center">
+                <thead class="bg-light text-capitalize">
+                    <tr>
+                        <th hidden>Ref ID</th>
+                        <th>Organiser </th>
+                        <th>State</th>
+                        <th>District</th>
+                        <th>Venue</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Contact Details</th>
+                        <th>E-mail</th>
+                        <th>Registration</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tableBody">
+                    <% if(records.length>0){
+
+                    records.forEach(function(row){
+                        %>
+                        <form action="/regForCamp/:<%= row.email %>&:<%= row.date %>" method="POST">
+                            <tr>
+                                <td>
+                                    <%= row.organizer %>
+                                </td>
+                                <td>
+                                    <%= row.state %>
+
+                                </td>
+                                <td>
+                                    <%= row.district %>
+
+                                </td>
+                                <td>
+                                    <%= row.venue %>
+
+                                </td>
+                                <td>
+                                    <%= row.date %>
+                                        <input type="hidden" name="campdate" value=" <%= row.date %>">
+                                </td>
+                                <td>
+                                    <%= row.time %>
+                                </td>
+                                <td>
+                                    <%= row.contact %>
+                                </td>
+                                <td>
+                                    <%= row.email %>
+                                        <input type="hidden" name="campmail" value=" <%= row.email %>">
+                                </td>
+                                <td>
+                                    <button class="btn btn-primary" style="justify-content: center;" onclick="window.location.href='/RegForCamp/<%= row.email %>';">Camp Registration</button>
+                                </td>
+                            </tr>
+                        </form>
+                        <% }) 
+                  
+                    } %>
+                </tbody>
+
+            </table>
+            </br>
+
+            <div div class="row " style="margin-top:5px; color: blue; font-size: larger; font-weight: bold;">
+                <% if (pages > 0) { %>
+                    <ul class="pagination text-center">
+                        <% if (current == 1) { %>
+                            <li class="disabled" style="color: rgba(17, 10, 10, 0.767);"><a>First</a></li>
+                            <% } else { %>
+                                <li><a href="/camp/1">First</a></li>
+                                <% } %>
+                                    <% var i = (Number(current) > 5 ? Number(current) - 4 : 1) %>
+                                        <% if (i !== 1) { %>
+                                            <li class="disabled" style="color: rgba(17, 10, 10, 0.767);"><a>...</a></li>
+                                            <% } %>
+                                                <% for (; i <= (Number(current) + 4) && i <= pages; i++) { %>
+                                                    <% if (i == current) { %>
+                                                        <li class="active">
+                                                            <a>
+                                                                <%= i %>
+                                                            </a>
+                                                        </li>
+                                                        <% } else { %>
+                                                            <li>
+                                                                <a href="/camp/<%= i %>">
+                                                                    <%= i %>
+                                                                </a>
+                                                            </li>
+                                                            <% } %>
+                                                                <% if (i == Number(current) + 4 && i < pages) { %>
+                                                                    <li class="disabled" style="color: rgba(17, 10, 10, 0.767);"><a>...</a></li>
+                                                                    <% } %>
+                                                                        <% } %>
+                                                                            <% if (current == pages) { %>
+                                                                                <li class="disabled" style="color: rgba(17, 10, 10, 0.767);"><a>Last</a></li>
+                                                                                <% } else { %>
+                                                                                    <li><a href="/camp/<%= pages %>">Last</a></li>
+                                                                                    <% } %>
+                    </ul>
+                    <% } %>
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+ <!-- Start Footer-->
+ <footer class="container-fluid text-black mt-5 " style="border-top: 3px solid #DC3545; background-color: rgb(240, 219, 219); margin-bottom:0px; height:100px;">
+    <div class="container ">
+        <!-- Start Footer Container -->
+        <div class="row py-3 ">
+            <!-- Start Footer Row -->
+            <div class="col-md-6 ">
+                <!-- Start Footer 1st Column -->
+                <div>
+                    <span>Follow Us: </span>
+                    <a href="https://www.facebook.com/team.jeevanpradaya/"><img src="../images/fb.png " alt="facebook " style="height:20px; width:20px; "> </img>
+                    </a>
+                    <a href="https://twitter.com/jeevanpradaya?s=09"><img src="../images/twit.png " alt="twitter " style="height:20px; width:20px; "> </img>
+                    </a>
+                    <a href=" https://www.instagram.com/team_jeevanpradaya/?igshid=1jqj5xv3a1yq9 "><img src="../images/insta.png " alt="instagram " style="height:20px; width:20px; "> </img>
+                    </a>
+                </div>
+                <!-- End Footer 1st Column -->
+
+                <div class="col-md-6 text-right ">
+                    <!-- Start Footer 2nd Column -->
+                    <small> Designed by <a href="https://www.gcoeara.ac.in " target="_blank ">GCOEARA STUDENTS </a> &copy; 2020. </small>
+                </div>
+                <!-- End Footer 2nd Column -->
+            </div>
+            <!-- End Footer Row -->
+        </div>
+        <!-- End Footer Container -->
+</footer>
+<!-- End Footer -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js " integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49 " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js " integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy " crossorigin="anonymous "></script>
+
+</body>
+
+
+</html>

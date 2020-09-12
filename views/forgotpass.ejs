@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<style>
+    body {
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+    }
+    
+    #forgot {
+        border: 2px solid black;
+        padding: 60px 40px;
+        margin-top: 200px;
+        -webkit-box-shadow: 5px 2px 62px 8px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 5px 2px 62px 8px rgba(0, 0, 0, 0.75);
+        box-shadow: 5px 2px 62px 8px rgba(0, 0, 0, 0.75);
+    }
+    
+    h1 {
+        color: black;
+        text-align: center;
+        font-weight: bolder;
+    }
+    
+    .form-group {
+        color: black;
+        text-shadow: black;
+    }
+    .navbar #tabmenu .custom-nav .nav-item a {
+    color: #fff;
+    padding: 10px;
+}
+
+.navbar #tabmenu .custom-nav .nav-item a:hover {
+    color: #F0AAB1;
+}
+
+</style>
+
+<head>
+
+  
+    <link rel="stylesheet" href="../stylesheets/campregistration.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css'>
+
+    <title>Forgot password</title>
+</head>
+
+
+<body>
+    <div style="margin-bottom: 110px;">
+        <nav class="navbar navbar-expand-md navbar-dark bg-danger pl-5 fixed-top" style="background-color: rgb(245, 10, 10);">
+            <img src="../images/logo.jpg" class="image-fluid" style="height:80px; width:80px; border-radius: 80px;" />
+            <a href="/" class="navbar-portal" style="text-decoration: none; color:white; font-size:40px;">जीवनप्रदाय <br><h6 style="margin-left: 0px; color: black; font: italic;">Innovation Responsibility And Humanism</h6></a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#tabmenu">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+            <div class="collapse navbar-collapse" id="tabmenu">
+                <ul class="navbar-nav pl-5 custom-nav" style="margin-left:6%; font-size:20px; color:rgb(8, 8, 7);">
+                    <li class="nav-item"><a href="/" class="nav-link">Home</a> </li>
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 col-sm-12 col-xm-12"></div>
+            <div class="col-md-5 col-sm-12 col-xm-12" id="forgot">
+                <form action="/forgot" method="POST">
+                    <h1>Forgot Password</h1>
+                    <div class="form-group">
+
+                        <div>
+                            <h5 class="text-centre" style="color:green;">Password will be sent on your E-mail ID</h5>
+                        </div>
+                        <label for="venue">E-mail ID</label>
+                        <input type="email" class="form-control" id="mail" name="Fmail" placeholder="Enter Registered E-mail">
+                        <label for="Organizer" id="lblOrganizer" style="color: red;"></label><br/>
+                    </div>
+
+                    <button type="submit" class="btn btn-success">Submit</button>
+
+
+                    <% if(msg!=''){%>
+                        <div class="alert alert-warning " role="alert">
+                            <%= msg %>
+                        </div>
+                        <% }%>
+
+                </form><br>
+
+                <FORM action="/password" method="POST">
+                    <input type="hidden" class="form-control" name="otp" value="<%= otp %>">
+                    <input type="hidden" class="form-control" name="email" value="<%= E_mail %>">
+
+                    <input type="text" class="form-control" name="otpenter" placeholder="Enter OTP"><br>
+                    <button type="submit" class="btn btn-success">Verify OTP</button>
+                </FORM>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xm-12"></div>
+        </div>
+    </div>
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js " integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49 " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js " integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy " crossorigin="anonymous "></script>
+
+</body>
+
+</html>

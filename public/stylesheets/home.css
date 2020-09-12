@@ -1,0 +1,212 @@
+.navbar #tabmenu .custom-nav .nav-item a {
+    color: #fff;
+    padding: 10px;
+}
+
+.navbar #tabmenu .custom-nav .nav-item a:hover {
+    color: #F0AAB1;
+}
+
+@media only screen and (max-width: 2000px) {
+    .navbar-portal {
+        font-size: 60px;
+        margin-left: 30px;
+    }
+    .image-fluid {
+        border-radius: 50%;
+        height: 120px;
+        width: 120px;
+    }
+}
+
+@media only screen and (max-width: 1500px) {
+    .navbar-portal {
+        font-size: 40px;
+        margin-left: 20px;
+    }
+    .image-fluid {
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .navbar-portal {
+        font-size: 35px;
+        margin-left: 0px;
+    }
+    .image-fluid {
+        height: 70px;
+        width: 70px;
+        border-radius: 50%;
+    }
+}
+
+.back-image {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 70vh;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    -ms-border-radius: 0px;
+    -o-border-radius: 0px;
+    margin-top: 100px;
+    height: 800px;
+}
+
+.text-centre {
+    text-align: center;
+    margin-top: 100px;
+    margin-left: 20%;
+    margin-right: 30%;
+}
+
+.login-header {
+    color: rgb(17, 15, 15);
+    text-align: center;
+    font-size: 70px;
+}
+
+.login-form p {
+    color: red;
+    font-size: 18px;
+}
+
+body {
+    background: linear-gradient(to right, rgb(228, 56, 56), white, white, white, rgb(228, 56, 56));
+}
+
+
+/* Style inputs, select elements and textareas */
+
+
+/*abel to display next to the inputs */
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+
+/* Style the submit button */
+
+
+/* Style the container */
+
+.container {
+    border-radius: 5px;
+    background-color: colorless;
+    padding: 5px;
+}
+
+
+/* Floating column for labels: 25% width */
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+
+/* Floating column for inputs: 75% width */
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+
+/* Clear floats after the columns */
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+
+@media screen and (max-width: 600px) {
+    .col-25 input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+.about {
+    margin-top: 5%;
+    height: fit-content;
+    width: fit-content;
+    box-shadow: red 5px 5px 5px 5px;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+}
+
+a {
+    color: #DC3545;
+}
+
+a:hover {
+    color: #E994A2;
+}
+
+.login-form {
+    width: 340px;
+    margin: 50px auto;
+}
+
+.login-form form {
+    margin-bottom: 15px;
+    background: #f7f7f7;
+    box-shadow: 5px 5px 5px 5px rgba(248, 11, 11, 0.979);
+    padding: 30px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    width: 100%;
+}
+
+.login-form h2 {
+    margin: 0 0 15px;
+}
+
+.form-control,
+.btn {
+    min-height: 38px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.btn {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 2000px) {
+    p {
+        font-size: 30px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    p {
+        font-size: 25px;
+    }
+}

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<style>
+    body {
+        background-image: url(../images/2.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+    }
+    
+    #camp {
+        border: 2px solid black;
+        padding: 60px 40px;
+        margin-top: 200px;
+        -webkit-box-shadow: 5px 2px 62px 8px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 5px 2px 62px 8px rgba(0, 0, 0, 0.75);
+        box-shadow: 5px 2px 62px 8px rgba(0, 0, 0, 0.75);
+    }
+    
+    h1 {
+        color: black;
+        text-align: center;
+        font-weight: bolder;
+    }
+    
+    .form-group {
+        color: black;
+        text-shadow: black;
+    }
+    .navbar #tabmenu .custom-nav .nav-item a {
+        color: #fff;
+        padding: 10px;
+    }
+    
+    .navbar #tabmenu .custom-nav .nav-item a:hover {
+        color: #F0AAB1;
+    }
+    
+
+</style>
+
+<head>
+
+    
+    <link rel="stylesheet" href="../stylesheets/campregistration.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css'>
+
+    <title>Jeevanpraday|Admin</title>
+</head>
+
+<body>
+
+    <div>
+        <nav class="navbar navbar-expand-md navbar-dark bg-danger pl-5 fixed-top" style="background-color: rgb(245, 10, 10);">
+            <img src="../images/logo.jpg" class="image-fluid" style="height:80px; width:80px; border-radius: 80px;" />
+            <a href="/" class="navbar-portal" style="text-decoration: none; color:white; font-size:40px;">जीवनप्रदाय <br><h6 style="margin-left: 0px; color: black; font: italic;">Innovation Responsibility And Humanism</h6></a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#tabmenu">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+            <div class="collapse navbar-collapse" id="tabmenu">
+                <ul class="navbar-nav pl-5 custom-nav" style="margin-left:6%; font-size:20px; color:rgb(8, 8, 7);">
+                    <li class="nav-item"><a href="/" class="nav-link">Home</a> </li>
+                    <li class="nav-item"><a href="/showvalidcamps" class="nav-link">Non forwarded camps</a> </li>
+                    <li class="nav-item"><a href="/logout" class="nav-link">Log out</a> </li>
+   
+                </ul>
+                </li>
+
+                </ul>
+
+            </div>
+        </nav>
+    </div>
+    <!-- end navigation -->
+
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 col-sm-3 col-xm-12"></div>
+            <div class="col-md-5 col-sm-5 col-xm-12">
+                <form action="/admin" id="camp" method="POST">
+                    <h1 style="color: #DC3545;">Registeration for Blood Banks</h1></br>
+                    <div class="form-group">
+
+                        <p>
+
+                            <label>Select Type of Collaborative : </label>
+
+                            <select ID="country" name="bcordinate" value="<%= user.bcordinate%>" style="border-radius: 8px; padding: 2px;"> 
+                    <option>....Select....</option>
+                    <option>Blood Bank</option>
+                    <option>NGO</option>
+                
+                  </select>
+                            <% if(errors.bcordinate){%>
+                                <p style="color: red;">
+                                    <%= errors.bcordinate.msg%>
+                                </p>
+                                <%}%>
+
+
+                        </p>
+
+
+                        <label for="venue">Name of blood bank:</label>
+                        <input type="text" class="form-control" id="organizer" name="bname" value="<%= user.bname%>">
+                        <% if(errors.bname){%>
+                            <p style="color: red;">
+                                <%= errors.bname.msg%>
+                            </p>
+                            <%}%>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="dist">District:</label>
+                        <input type="text" class="form-control" id="venue" name="bdist" value="<%= user.bdist%>">
+                        <% if(errors.bdist){%>
+                            <p style="color: red;">
+                                <%= errors.bdist.msg%>
+                            </p>
+                            <%}%>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="city">Address:</label>
+                        <input type="text" class="form-control" id="date" name="bcity" value="<%= user.bcity%>">
+                        <% if(errors.bcity){%>
+                            <p style="color: red;">
+                                <%= errors.bcity.msg%>
+                            </p>
+                            <%}%>
+
+                    </div>
+            
+                    <div class="form-group">
+                        <label for="contact">Contact:</label>
+                        <input type="tel" class="form-control" id="contact" name="bcontact" value="<%= user.bcontact%>">
+                        <% if(errors.bcontact){%>
+                            <p style="color: red;">
+                                <%= errors.bcontact.msg%>
+                            </p>
+                            <%}%>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="details">details(if any):</label>
+                        <input type="text" class="form-control" id="details" name="bdetails" value="<%= user.bdetails%>">
+                        <% if(errors.bdetails){%>
+                            <p style="color: red;">
+                                <%= errors.bdetails.msg%>
+                            </p>
+                            <%}%>
+
+
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox">I hereby declare that all the details provided above are valid and I also accept policy of An Integrated Automated Blood Donation.</label>
+                    </div>
+                    <button type="submit" class="btn btn-success" onclick="window.location.href='/admin';">Submit</button>
+
+                </form>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xm-12"></div>
+        </div>
+    </div>
+
+ <!-- Start Footer-->
+ <footer class="container-fluid text-black mt-5 " style="border-top: 3px solid #DC3545; background-color: rgb(240, 219, 219); margin-bottom:0px; height:100px;">
+    <div class="container ">
+        <!-- Start Footer Container -->
+        <div class="row py-3 ">
+            <!-- Start Footer Row -->
+            <div class="col-md-6 ">
+                <!-- Start Footer 1st Column -->
+                <div>
+                    <span>Follow Us: </span>
+                    <a href="https://www.facebook.com/team.jeevanpradaya/"><img src="../images/fb.png " alt="facebook " style="height:20px; width:20px; "> </img>
+                    </a>
+                    <a href="https://twitter.com/jeevanpradaya?s=09"><img src="../images/twit.png " alt="twitter " style="height:20px; width:20px; "> </img>
+                    </a>
+                    <a href=" https://www.instagram.com/team_jeevanpradaya/?igshid=1jqj5xv3a1yq9 "><img src="../images/insta.png " alt="instagram " style="height:20px; width:20px; "> </img>
+                    </a>
+                </div>
+                <!-- End Footer 1st Column -->
+
+                <div class="col-md-6 text-right ">
+                    <!-- Start Footer 2nd Column -->
+                    <small> Designed by <a href="https://www.gcoeara.ac.in " target="_blank ">GCOEARA STUDENTS </a> &copy; 2020. </small>
+                </div>
+                <!-- End Footer 2nd Column -->
+            </div>
+            <!-- End Footer Row -->
+        </div>
+        <!-- End Footer Container -->
+</footer>
+<!-- End Footer -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Camps Registration </title>
+    <link rel="stylesheet" href="../stylesheets/bloodbond.css" />
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css'>
+
+</head>
+
+<style>
+    #regform1 {
+        padding: 60px 40px;
+        margin-top: 200px;
+        -webkit-box-shadow: 5px 2px 62px 8px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 5px 2px 62px 8px rgba(0, 0, 0, 0.75);
+        box-shadow: 5px 2px 62px 8px rgba(0, 0, 0, 0.75);
+    }
+    .navbar #tabmenu .custom-nav .nav-item a {
+    color: #fff;
+    padding: 10px;
+}
+
+.navbar #tabmenu .custom-nav .nav-item a:hover {
+    color: #F0AAB1;
+}
+
+</style>
+
+
+
+
+<!-- start navigation -->
+<div>
+    <nav class="navbar navbar-expand-md navbar-dark bg-danger pl-5 fixed-top" style="background-color: rgb(245, 10, 10);">
+        <img src="../images/logo.jpg" class="image-fluid" style="height:80px; width:80px; border-radius: 80px;" />
+        <a href="/" class="navbar-portal" style="text-decoration: none; color:white; font-size:40px;">जीवनप्रदाय <br><h6 style="margin-left: 0px; color: black; font: italic;">Innovation Responsibility And Humanism</h6></a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#tabmenu">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="tabmenu">
+            <ul class="navbar-nav pl-5 custom-nav" style="margin-left:6%; font-size:20px; color:rgb(8, 8, 7);">
+                <li class="nav-item"><a href="/" class="nav-link">Home</a> </li>
+                <li class="nav-item" style="float: right;"><a href=" #" class="nav-link">Logged in as: <% if(loginUser) { %> <%= loginUser %> <% } %> </a></li>
+
+                <li class="nav-item"><a href="/logout" class="nav-link">Log Out</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<!-- end navigation -->
+
+
+
+<main class="my-form">
+    <div class="cotainer">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">Registration For Camp</div>
+                    <div class="card-body">
+
+                        <form onsubmit="return validate()" action="/campregi" autocomplete="off" method="POST" id="regform1" style="margin-top: 100px; margin-bottom: 100px;">
+                            <!--Nextpage-->
+                            <fieldset class="writers">
+
+                                <input type="hidden" name="campmail" value="<%= campmail %>" /><br/>
+                                <input type="hidden" name="campdate" value="<%= campdate %>" /><br/>
+
+                                <p>
+
+                                    <label>Full Name:</label>
+
+                                    <input id="fname" placeholder="Enter your full name" type="text" name="fullname" value="<%= records.fullname %>" /><br/>
+                                    <label id="lbluser" style="color: red;"></label><br/>
+
+                                </p>
+
+                                <label id>Blood Group:</label>
+                                <select id="bg" name="bloodgroup"> 
+                                        <option>....Select....</option>
+                                        <option <% if(records.bloodgroup=="A+"){ %>selected <%}%>>A+</option>
+                                        <option <% if(records.bloodgroup=="A-"){ %>selected <%}%>>A-</option>
+                                        <option <% if(records.bloodgroup=="A1+"){ %>selected <%}%>>A1+</option>
+                                        <option <% if(records.bloodgroup=="A1-"){ %>selected <%}%>>A1-</option>
+                                        <option <% if(records.bloodgroup=="A1B+"){ %>selected <%}%>>A1B+</option>
+                                        <option <% if(records.bloodgroup=="A1B-"){ %>selected <%}%>>A1B-</option>
+                                        <option <% if(records.bloodgroup=="A2+"){ %>selected <%}%>>A2+</option>
+                                        <option <% if(records.bloodgroup=="A2-"){ %>selected <%}%>>A2-</option>
+                                        <option <% if(records.bloodgroup=="A2B+"){ %>selected <%}%>>A2B+</option>
+                                        <option <% if(records.bloodgroup=="A2B-"){ %>selected <%}%>>A2B-</option>
+                                        <option <% if(records.bloodgroup=="AB+"){ %>selected <%}%>>AB+</option>
+                                        <option <% if(records.bloodgroup=="AB-"){ %>selected <%}%>>AB-</option>
+                                        <option <% if(records.bloodgroup=="B+"){ %>selected <%}%>>B+</option>
+                                        <option <% if(records.bloodgroup=="B-"){ %>selected <%}%>>B-</option>
+                                        <option <% if(records.bloodgroup=="O+"){ %>selected <%}%>>O+</option>
+                                        <option <% if(records.bloodgroup=="O-"){ %>selected <%}%>>O-</option>
+                                      </select>
+
+
+
+
+
+                                </p>
+
+                                <p>
+
+                                    <label>Select Country:</label>
+
+                                    <select ID="country" name="country"> 
+                                        <option value="india"<% if(records.country=="india"){ %>selected <%}%>>INDIA</option>
+                                      </select>
+
+                                </p>
+                                <p>
+
+                                    <label>Enter State:</label>
+
+                                    <input id="state" placeholder="Enter your state" type="text" name="state" value="<%= records.state %>" /><br/>
+                                    <label id="lbluser" style="color: red;"></label><br/>
+
+                                </p>
+                                <p>
+
+                                    <label>Enter District:</label>
+
+                                    <input id="dist" placeholder="Enter your District" type="text" name="dist" value="<%= records.district %>" /><br/>
+                                    <label id="lbluser" style="color: red;"></label><br/>
+
+                                </p>
+                                <p>
+
+                                    <label>Enter City:</label>
+
+                                    <input id="city" placeholder="Enter your city" type="text" name="city" value="<%= records.city %>" /><br/>
+                                    <label id="lbluser" style="color: red;"></label><br/>
+
+                                </p>
+
+                                <p>
+                                    <label>Email:</label>
+                                    <input id="useremail" type="email" placeholder="Enter E-Mail Id" name="useremail" value="<%= records.email %>"><br/>
+                                    <label id="lblemail" style="color: red;"></label><br/>
+
+                                </p>
+
+
+
+                                <p>
+                                    <label>Mobile Number:</label>
+                                    <input id="mobileno" placeholder="Enter Mobile No" name="mno" type="number" value="<%= records.mobileno %>"><br/>
+                                    <label id="lblmobileno" style="color: red;"></label><br/>
+
+                                </p>
+
+                                <p>
+                                    <label for="date">last donation Date:</label>
+                                    <input type="date" class="form-control" id="date" name="lastdate">
+                                </p>
+
+
+                                <p>
+                                    <label>
+                                        <input type="checkbox" value="terms" required>
+                                        I authorise the website to display my name and telephone number, so that the needy could contact me, as and when there is an emergency.
+                                
+                                      </label><br/></p>
+                                <label>
+                                      <button type="submit" id="register" value="register">Register</button>
+                                    </label><br/>
+                                <div>
+                                    <% if(msg!=''){%>
+                                        <p style="text-align: center; border: black ; border-radius: 20px;">
+                                            <%= msg %>
+                                        </p>
+
+                                        <% } %>
+                                </div>
+                                <p>
+                                    <br/>
+
+                                </p>
+                            </fieldset>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+
+
+
+
+
+
+
+<!-- Start Footer-->
+
+
+ <!-- Start Footer-->
+ <footer class="container-fluid text-black mt-5 " style="border-top: 3px solid #DC3545; background-color: rgb(240, 219, 219); margin-bottom:0px; height:100px;">
+    <div class="container ">
+        <!-- Start Footer Container -->
+        <div class="row py-3 ">
+            <!-- Start Footer Row -->
+            <div class="col-md-6 ">
+                <!-- Start Footer 1st Column -->
+                <div>
+                    <span>Follow Us: </span>
+                    <a href="https://www.facebook.com/team.jeevanpradaya/"><img src="../images/fb.png " alt="facebook " style="height:20px; width:20px; "> </img>
+                    </a>
+                    <a href="https://twitter.com/jeevanpradaya?s=09"><img src="../images/twit.png " alt="twitter " style="height:20px; width:20px; "> </img>
+                    </a>
+                    <a href=" https://www.instagram.com/team_jeevanpradaya/?igshid=1jqj5xv3a1yq9 "><img src="../images/insta.png " alt="instagram " style="height:20px; width:20px; "> </img>
+                    </a>
+                </div>
+                <!-- End Footer 1st Column -->
+
+                <div class="col-md-6 text-right ">
+                    <!-- Start Footer 2nd Column -->
+                    <small> Designed by <a href="https://www.gcoeara.ac.in " target="_blank ">GCOEARA STUDENTS </a> &copy; 2020. </small>
+                </div>
+                <!-- End Footer 2nd Column -->
+            </div>
+            <!-- End Footer Row -->
+        </div>
+        <!-- End Footer Container -->
+</footer>
+<!-- End Footer -->
+<script>
+    function validate() {
+        var fullname = document.getElementById("uname").value;
+        var password = document.getElementById("password").value;
+        var mail = document.getElementById("email").value;
+        var cpass = document.getElementById("cpass").value;
+        var mobileno = document.getElementById("mobileno").value;
+
+
+        if (fullname.trim() == "") {
+            document.getElementById("lbluser").innerHTML = "*Please fill the full name.";
+            uname.style.border = "solid 2px red";
+            return false;
+        }
+        if (!isNaN(fullname)) {
+            document.getElementById("lbluser").innerHTML = "*Numbers are not allowed.";
+            uname.style.border = "solid 2px red";
+            return false;
+        }
+
+        if (mail == "") {
+            document.getElementById("lblemail").innerHTML = "*Please fill the email id.";
+            // email.style.border="solid 2px red";
+            return false;
+        }
+
+
+        if (mail.indexOf("@") <= 0) {
+            document.getElementById("lblemail").innerHTML = "*Invalid position of'@'."
+                //email.style.border="solid 2px red";
+            return false;
+        }
+        if ((mail.charAt(mail.length - 4) != ".") && (mail.charAt(mail.length - 3) != '.')) {
+            document.getElementById("lblemail").innerHTML = "*Invalid position of ' . ' ";
+            //email.style.border="solid 2px red";
+            return false;
+        }
+
+
+        if (mobileno == "") {
+            document.getElementById("lblmobileno").innerHTML = "*Please fill the mobile no.";
+            return false;
+
+        }
+        if (isNaN(mobileno)) {
+            document.getElementById("lblmobileno").innerHTML = "*Only numbers are allowed.";
+            // mobileno.style.border="solid 2px red";
+            return false;
+        }
+        if (mobileno.length != 10) {
+            document.getElementById("lblmobileno").innerHTML = "*Enter 10 digit mobile number.";
+            // mobileno.style.border="solid 2px red";
+            return false;
+        }
+
+        if (password.trim() == "") {
+            document.getElementById("lblpassword").innerHTML = "*Please fill the password.";
+            return false;
+
+        }
+        if ((password.length <= 5) || (password.length >= 20)) {
+            document.getElementById("lblpassword").innerHTML = "*Password should contain 5-20 characters.";
+            return false;
+        }
+        if (password != cpass) {
+            document.getElementById("lblcpass").innerHTML = "*Password not matched.";
+            return false;
+
+        }
+        if (cpass == "") {
+            document.getElementById("lblcpass").innerHTML = "*Please re-enter the password";
+            return false;
+        }
+
+
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Blood Donor-Registration</title>
+    <link rel="stylesheet" href="../stylesheets/bloodbond.css" />
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu:500' rel='stylesheet' type='text/css'>
+
+</head>
+<style>
+    #regform {
+        padding: 60px 40px;
+        margin-top: 200px;
+        -webkit-box-shadow: 5px 2px 62px 8px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 5px 2px 62px 8px rgba(0, 0, 0, 0.75);
+        box-shadow: 5px 2px 62px 8px rgba(0, 0, 0, 0.75);
+    }
+
+    
+
+    .navbar #tabmenu .custom-nav .nav-item a {
+        color: #fff;
+        padding: 10px;
+    }
+    
+    .navbar #tabmenu .custom-nav .nav-item a:hover {
+        color: #F0AAB1;
+    }
+    
+
+
+
+</style>
+
+<body>
+    <!-- start navigation -->
+    <div>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-danger pl-5 fixed-top" style="background-color: rgb(245, 10, 10);">
+            <img src="../images/logo.jpg" class="image-fluid" style="height:80px; width:80px; border-radius: 80px;" />
+            <a href="/" class="navbar-portal" style="text-decoration: none; color:white; font-size:40px;">जीवनप्रदाय <br><h6 style="margin-left: 0px; color: black; font: italic;">Innovation Responsibility And Humanism</h6></a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#tabmenu">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+            <div class="collapse navbar-collapse" id="tabmenu">
+                <ul class="navbar-nav pl-5 custom-nav" style="margin-left:6%; font-size:20px; color:rgb(8, 8, 7);">
+                    <li class="nav-item"><a href="/" class="nav-link">Home</a> </li>
+
+                </ul>
+            </div>
+        </nav>
+
+    </div>
+    <!-- end navigation
+  -->
+
+
+    <main class="my-form">
+        <div class="cotainer" style="margin-top: 150px;">
+            <div class="row justify-content-center">
+                <div class="col-md-8 ">
+                    <div class="card">
+                        <div class="card-header" ><h5><b> Kindly Register Here</b></h5></div>
+                        <div class="card-body">
+
+                            <form onsubmit="return validate()" action="/bloodbond" autocomplete="off" method="POST" id="regform" style="margin-top:30px;">
+                                <!--Nextpage-->
+                                <fieldset class="writers">
+                                    <h4 style="margin-top:0px; font-family: sans-serif;font-size: medium;">Please fill the following information to register as voluntary blood donor and become part of our vision. Kindly update your date of donation once done, so that your name will be hidden automatically till next 3 Months.
+                                        Also please update your profile/information if in case you relocate in future.<br>
+                                    </h4>
+                                    <br><br>
+                                    <p>
+
+                                        <label>Full Name:</label>
+
+                                        <input id="fname" placeholder="Enter your full name" type="text" name="fullname" value="<%= user.fullname%>" />
+
+                                        <% if(errors.fullname){%>
+                                            <p style="color: red;">
+                                                <%= errors.fullname.msg%>
+                                            </p>
+                                            <%}%>
+
+
+                                    </p>
+
+                                    <label id>Blood Group:</label>
+                                    <select id="bg" name="bloodgroup" value="<%= user.bloodgroup%>"> 
+                                <option>....Select....</option>
+                                <option>A+</option>
+                                <option>A-</option>
+                                <option>AB+</option>
+                                <option>AB-</option>
+                                <option>B+</option>
+                                <option>B-</option>
+                                <option>O+</option>
+                                <option>O-</option>
+                              </select>
+
+                                    <% if(errors.bloodgroup){%>
+                                        <p style="color: red;">
+                                            <%= errors.bloodgroup.msg%>
+                                        </p>
+                                        <%}%>
+
+
+
+
+
+                                            </p>
+
+                                            <p>
+
+                                                <label>Select Country:</label>
+
+                                                <select ID="country" name="country" value="<%= user.country%>"> 
+                                <option>....Select....</option>
+                                <option>India</option>
+                                <option> Other than India</option>
+                            
+                              </select>
+                                                <% if(errors.country){%>
+                                                    <p style="color: red;">
+                                                        <%= errors.country.msg%>
+                                                    </p>
+                                                    <%}%>
+
+
+
+
+
+                                            </p>
+                                            <p>
+
+                                                <label>Enter State:</label>
+
+                                                <input id="state" value="<%= user.state%>" placeholder="Enter your state" type="text" name="state" /><br/>
+
+                                                <% if(errors.state){%>
+                                                    <p style="color: red;">
+                                                        <%= errors.state.msg%>
+                                                    </p>
+                                                    <%}%>
+
+                                            </p>
+                                            <p>
+
+                                                <label>Enter District:</label>
+
+                                                <input id="dist" value="<%= user.dist%>" placeholder="Enter your District" type="text" name="dist" /><br/>
+
+
+                                                <% if(errors.dist){%>
+                                                    <p style="color: red;">
+                                                        <%= errors.dist.msg%>
+                                                    </p>
+                                                    <%}%>
+
+                                            </p>
+                                            <p>
+
+                                                <label>Enter City:</label>
+
+                                                <input id="city" value="<%= user.city%>" placeholder="Enter your city" type="text" name="city" /><br/>
+
+                                                <% if(errors.city){%>
+                                                    <p style="color: red;">
+                                                        <%= errors.city.msg%>
+                                                    </p>
+                                                    <%}%>
+
+
+                                            </p>
+
+
+
+
+
+
+                                            <p>
+                                                <label>Email:</label>
+                                                <input id="email" value="<%= user.email%>" placeholder="Enter E-Mail Id" name="email" type="email"><br/>
+
+                                                <% if(errors.email){%>
+                                                    <p style="color: red;">
+                                                        <%= errors.email.msg%>
+                                                    </p>
+                                                    <%}%>
+
+
+                                            </p>
+
+
+
+                                            <p>
+                                                <label>Mobile Number:</label>
+                                                <input id="mobileno" value="<%= user.mno%>" placeholder="Enter Mobile No" name="mno" type="number"><br/>
+
+
+                                                <% if(errors.mno){%>
+                                                    <p style="color: red;">
+                                                        <%= errors.mno.msg%>
+                                                    </p>
+                                                    <%}%>
+
+                                            </p>
+
+
+                                            <p>
+                                                <label>Password</label>
+                                                <input id="pass" value="<%= user.pass%>" placeholder="Enter Password" type="password" name="pass"><br/>
+
+
+                                                <% if(errors.pass){%>
+                                                    <p style="color: red;">
+                                                        <%= errors.pass.msg%>
+                                                    </p>
+                                                    <%}%>
+
+                                            </p>
+                                            <p>
+                                                <label>Confirm your password</label>
+                                                <input id="cpass" value="<%= user.cpass%>" placeholder="Renter Password" type="password" name="cpass"><br/>
+
+                                                <% if(errors.cpass){%>
+                                                    <p style="color: red;">
+                                                        <%= errors.cpass.msg%>
+                                                    </p>
+                                                    <%}%>
+
+                                            </p>
+
+
+
+
+                                            <p>
+                                                <label>
+                                <input type="checkbox" value="terms" required>
+                                I authorise the website to display my name and telephone number, so that the needy could contact me, as and when there is an emergency.
+                        
+                              </label><br/></p>
+                                            <label>
+                              <button type="submit" id="rsubmit" value="signup" onsubmit="return validate()">Sign Up</button>
+                            </label><br/>
+                                            <div>
+                                                <% if(msg!=''){%>
+                                                    <p style="text-align: center; border: black ; border-radius: 20px;">
+                                                        <%= msg %>
+                                                    </p>
+
+                                                    <% } %>
+                                            </div>
+                                            <p>
+                                                <br/>
+                                                <h4  style="font-family: sans-serif;font-size: medium;">
+                                                    <strong>Important</strong> : All Voluntary Donors are warned of likely misuse of blood donated by them at the hospital with or without the knowledge of the hospital management. At some places the hospital
+                                                    staff have taken the blood and sold it to others for a price. As a responsible citizen/voluntary blood donor, we request you to keep a watch on such people and hospitals. Donors must inform the team
+                                                    members/coordinators of such areas in case of any doubt.
+                                                </h4>
+                                            </p>
+                                </fieldset>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+
+
+    <!-- Start Footer-->
+
+ <!-- Start Footer-->
+ <footer class="container-fluid text-black mt-5 " style="border-top: 3px solid #DC3545; background-color: rgb(240, 219, 219); margin-bottom:0px; height:100px;">
+    <div class="container ">
+        <!-- Start Footer Container -->
+        <div class="row py-3 ">
+            <!-- Start Footer Row -->
+            <div class="col-md-6 ">
+                <!-- Start Footer 1st Column -->
+                <div>
+                    <span>Follow Us: </span>
+                    <a href="https://www.facebook.com/team.jeevanpradaya/"><img src="../images/fb.png " alt="facebook " style="height:20px; width:20px; "> </img>
+                    </a>
+                    <a href="https://twitter.com/jeevanpradaya?s=09"><img src="../images/twit.png " alt="twitter " style="height:20px; width:20px; "> </img>
+                    </a>
+                    <a href=" https://www.instagram.com/team_jeevanpradaya/?igshid=1jqj5xv3a1yq9 "><img src="../images/insta.png " alt="instagram " style="height:20px; width:20px; "> </img>
+                    </a>
+                </div>
+                <!-- End Footer 1st Column -->
+
+                <div class="col-md-6 text-right ">
+                    <!-- Start Footer 2nd Column -->
+                    <small> Designed by <a href="https://www.gcoeara.ac.in " target="_blank ">GCOEARA STUDENTS </a> &copy; 2020. </small>
+                </div>
+                <!-- End Footer 2nd Column -->
+            </div>
+            <!-- End Footer Row -->
+        </div>
+        <!-- End Footer Container -->
+</footer>
+<!-- End Footer -->
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js " integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49 " crossorigin="anonymous "></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js " integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy " crossorigin="anonymous "></script>
+
+</body>
+</html>

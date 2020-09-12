@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<title>Platlet Donation</title>
+
+<head>
+
+    <style>
+        .container {
+            width: 600px;
+            border: 0px solid red;
+            padding: 50px;
+            margin: 20px;
+            margin-left: 300px;
+            box-shadow: 10px 10px grey;
+            height: fit-content;
+            font-size: 12;
+        }
+        .navbar #tabmenu .custom-nav .nav-item a {
+    color: #fff;
+    padding: 10px;
+}
+
+.navbar #tabmenu .custom-nav .nav-item a:hover {
+    color: #F0AAB1;
+}
+
+    </style>
+    <script type='text/javascript'>
+        var objBlackAndWhite = {
+            hoverEffect: true, // default true
+            // set the path to BnWWorker.js for a superfast implementation
+            webworkerPath: '',
+            // for the images with a fluid width and height 
+            responsive: true,
+            invertHoverEffect: false,
+            speed: { //this property could also be just speed: value for both fadeIn and fadeOut
+                fadeIn: 400, // 400ms for fadeIn animations
+                fadeOut: 800 // 800ms for fadeOut animations
+            }
+        };
+    </script>
+       <link rel="canonical" href="http://www.bloodconnect.org/plateletdonation" />
+    <link rel="shortlink" href="http://www.bloodconnect.org/node/2951" />
+    <title>About Platelet Donation | BloodConnect</title>
+    <link type="text/css" rel="stylesheet" href="http://www.bloodconnect.org/sites/default/files/css/css_xE-rWrJf-fncB6ztZfd2huxqgxu4WO-qwma6Xer30m4.css" media="all" />
+    <link type="text/css" rel="stylesheet" href="http://www.bloodconnect.org/sites/default/files/css/css_GqCqCmGspWzZsDVTgkFoFb2eEt4xaByq4GFNcVi8QG4.css" media="all" />
+    <link type="text/css" rel="stylesheet" href="http://www.bloodconnect.org/sites/default/files/css/css_1kaWQHJPMCHCXOEmdkg9ftpywxudpFmum5_2--urxsg.css" media="all" />
+    <link type="text/css" rel="stylesheet" href="http://www.bloodconnect.org/sites/default/files/css/css_s_nvoBylaszCbaSIiv4NeA2lySXh8IyvHtOFR6TwZQ4.css" media="all" />
+    <link type="text/css" rel="stylesheet" href="http://www.bloodconnect.org/sites/default/files/css/css_qCtKEhTFRVhAp5oUYN9L99WPIBaTQp4xHZcHQ4sKkro.css" media="all" />
+    <script type="text/javascript" src="http://www.bloodconnect.org/sites/default/files/js/js_OMDGOrpnBNvzd4-fz73pLudGQDMuc0Cky0wG_th7-7s.js"></script>
+    <script type="text/javascript" src="http://www.bloodconnect.org/sites/default/files/js/js_w4vwnzly9WHEgYXtH6NnAPjmbltrsTQPhOMoKEWPcLo.js"></script>
+    <script type="text/javascript" src="http://www.bloodconnect.org/sites/default/files/js/js_k3Qjn3Asb3hwmh96eofhnNQqImDS03fMdJJ6EQ057VA.js"></script>
+    <script type="text/javascript" src="http://www.bloodconnect.org/sites/default/files/js/js_zt0O1QM_Xg2unCmlO0ImNhZ8Jomaoe5y6KDkzBhfRjI.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+   <script type="text/javascript">
+        //--><![CDATA[//>-->
+        jQuery(document).ready(function($) {
+            $.expr[':'].regex = function(elem, index, match) {
+                var matchParams = match[3].split(','),
+                    validLabels = /^(data|css):/,
+                    attr = {
+                        method: matchParams[0].match(validLabels) ?
+                            matchParams[0].split(':')[0] : 'attr',
+                        property: matchParams.shift().replace(validLabels, '')
+                    },
+                    regexFlags = 'ig',
+                    regex = new RegExp(matchParams.join('').replace(/^\s+|\s+$/g, ''), regexFlags);
+                return regex.test(jQuery(elem)[attr.method](attr.property));
+            }
+        });
+        //--><!]]>
+    </script>
+    <script type="text/javascript" src="http://www.bloodconnect.org/sites/all/modules/lightbox2/js/lightbox.js?1580381261"></script>
+    <script type="text/javascript" src="http://www.bloodconnect.org/sites/default/files/js/js_ZT53IarhxIr5rUyfHb9ll4MqTQN6JPFjLWJ0xaUNATU.js"></script>
+    <script type="text/javascript" src="http://www.bloodconnect.org/sites/default/files/js/js_ubNeUv0skseb0u5B8zweM9SrnvrahUUnRgf1vlLg4eE.js"></script>
+    <script type="text/javascript">
+        //--><![CDATA[//><!--
+        jQuery.extend(Drupal.settings, {
+            "basePath": "\/",
+            "pathPrefix": "",
+            "ajaxPageState": {
+                "theme": "goodnex",
+                "theme_token": "Zdb9Sr8ENfBkFrIKjhazU8myBd-NrXnKDTk3FzC9jUo",
+                "js": {
+                    "misc\/jquery.js": 1,
+                    "misc\/jquery.once.js": 1,
+                    "misc\/drupal.js": 1,
+                    "misc\/ui\/jquery.ui.core.min.js": 1,
+                    "misc\/ui\/jquery.ui.widget.min.js": 1,
+                    "misc\/ui\/jquery.ui.button.min.js": 1,
+                    "misc\/ui\/jquery.ui.mouse.min.js": 1,
+                    "misc\/ui\/jquery.ui.draggable.min.js": 1,
+                    "misc\/ui\/jquery.ui.position.min.js": 1,
+                    "misc\/ui\/jquery.ui.resizable.min.js": 1,
+                    "misc\/ui\/jquery.ui.dialog.min.js": 1,
+                    "sites\/all\/modules\/views\/js\/jquery.ui.dialog.patch.js": 1,
+                    "misc\/jquery.cookie.js": 1,
+                    "misc\/jquery.form.js": 1,
+                    "misc\/ajax.js": 1,
+                    "sites\/all\/modules\/button_field\/js\/button_field.ajax.js": 1,
+                    "sites\/all\/modules\/modalframe\/js\/parent.js": 1,
+                    "sites\/all\/modules\/automodal\/automodal.js": 1,
+                    "sites\/all\/modules\/event_calendar\/event_popup\/js\/event_popup.js": 1,
+                    "sites\/all\/modules\/event_calendar\/event_popup\/js\/event_popup_validate.js": 1,
+                    "0": 1,
+                    "sites\/all\/modules\/lightbox2\/js\/lightbox.js": 1,
+                    "misc\/progress.js": 1,
+                    "sites\/all\/modules\/ctools\/js\/modal.js": 1,
+                    "sites\/all\/modules\/modal_forms\/js\/modal_forms_popup.js": 1,
+                    "sites\/all\/modules\/captcha\/captcha.js": 1,
+                    "sites\/all\/modules\/hide_submit\/hide_submit.js": 1,
+                    "sites\/all\/themes\/goodnex\/js\/jquery.modernizr.js": 1,
+                    "sites\/all\/themes\/goodnex\/js\/jquery.easing.1.3.min.js": 1,
+                    "sites\/all\/themes\/goodnex\/js\/jquery.cycle.all.min.js": 1,
+                    "sites\/all\/themes\/goodnex\/js\/jquery.blackandwhite.min.js": 1,
+                    "sites\/all\/themes\/goodnex\/js\/mediaelement\/mediaelement-and-player.min.js": 1,
+                    "sites\/all\/themes\/goodnex\/js\/jquery.jcarousel.min.js": 1,
+                    "sites\/all\/themes\/goodnex\/js\/jquery.jflickrfeed.min.js": 1,
+                    "sites\/all\/themes\/goodnex\/js\/jquery.touchswipe.min.js": 1,
+                    "sites\/all\/themes\/goodnex\/js\/jquery.isotope.min.js": 1,
+                    "sites\/all\/themes\/goodnex\/js\/mobile-map.js": 1,
+                    "sites\/all\/themes\/goodnex\/js\/fancybox\/jquery.fancybox-1.3.4.pack.js": 1,
+                    "sites\/all\/themes\/goodnex\/js\/flexslider\/js\/jquery.flexslider-min.js": 1,
+                    "sites\/all\/themes\/goodnex\/js\/config.js": 1,
+                    "sites\/all\/themes\/goodnex\/js\/custom.js": 1,
+                    "sites\/all\/themes\/goodnex\/js\/goodnex.js": 1,
+                    "sites\/all\/themes\/goodnex\/js\/googleanalytics.js": 1
+                },
+                "css": {
+                    "modules\/system\/system.base.css": 1,
+                    "modules\/system\/system.menus.css": 1,
+                    "modules\/system\/system.messages.css": 1,
+                    "modules\/system\/system.theme.css": 1,
+                    "misc\/ui\/jquery.ui.core.css": 1,
+                    "misc\/ui\/jquery.ui.theme.css": 1,
+                    "misc\/ui\/jquery.ui.button.css": 1,
+                    "misc\/ui\/jquery.ui.resizable.css": 1,
+                    "misc\/ui\/jquery.ui.dialog.css": 1,
+                    "sites\/all\/modules\/calendar\/css\/calendar_multiday.css": 1,
+                    "modules\/comment\/comment.css": 1,
+                    "sites\/all\/modules\/date\/date_api\/date.css": 1,
+                    "sites\/all\/modules\/date\/date_popup\/themes\/datepicker.1.7.css": 1,
+                    "modules\/field\/theme\/field.css": 1,
+                    "sites\/all\/modules\/logintoboggan\/logintoboggan.css": 1,
+                    "modules\/node\/node.css": 1,
+                    "modules\/poll\/poll.css": 1,
+                    "modules\/search\/search.css": 1,
+                    "modules\/user\/user.css": 1,
+                    "modules\/forum\/forum.css": 1,
+                    "sites\/all\/modules\/views\/css\/views.css": 1,
+                    "sites\/all\/modules\/ckeditor\/css\/ckeditor.css": 1,
+                    "sites\/all\/modules\/modalframe\/css\/modalframe.parent.css": 1,
+                    "sites\/all\/modules\/ctools\/css\/ctools.css": 1,
+                    "sites\/all\/modules\/event_calendar\/event_popup\/css\/event_popup.css": 1,
+                    "sites\/all\/modules\/lightbox2\/css\/lightbox.css": 1,
+                    "sites\/all\/modules\/ctools\/css\/modal.css": 1,
+                    "sites\/all\/modules\/modal_forms\/css\/modal_forms_popup.css": 1,
+                    "sites\/all\/modules\/hide_submit\/hide_submit.css": 1,
+                    "sites\/all\/themes\/goodnex\/css\/style.css": 1,
+                    "sites\/all\/themes\/goodnex\/css\/drupal.css": 1,
+                    "sites\/all\/themes\/goodnex\/css\/skeleton.css": 1,
+                    "sites\/all\/themes\/goodnex\/css\/layout.css": 1,
+                    "sites\/all\/themes\/goodnex\/js\/fancybox\/jquery.fancybox-1.3.4.css": 1,
+                    "sites\/all\/themes\/goodnex\/js\/flexslider\/css\/flexslider.css": 1,
+                    "sites\/all\/themes\/goodnex\/js\/mediaelement\/jquery.mediaelementplayer.css": 1,
+                    "sites\/all\/themes\/goodnex\/css\/font-awesome.css": 1
+                }
+            },
+            "automodal": {
+                ".automodal": {
+                    "autoFit": true,
+                    "draggable": true,
+                    "width": 600,
+                    "height": 400,
+                    "automodalClose": true,
+                    "automodalReload": false
+                }
+            },
+            "event_popup": {
+                "classes": "",
+                "defaults": "width:300;height:auto;position:[center,60]",
+                "selector": "content",
+                "content_type": "event_calendar",
+                "op": false
+            },
+            "lightbox2": {
+                "rtl": 0,
+                "file_path": "\/(\\w\\w\/)public:\/",
+                "default_image": "\/sites\/all\/modules\/lightbox2\/images\/brokenimage.jpg",
+                "border_size": 10,
+                "font_color": "000",
+                "box_color": "fff",
+                "top_position": "",
+                "overlay_opacity": "0.8",
+                "overlay_color": "000",
+                "disable_close_click": true,
+                "resize_sequence": 0,
+                "resize_speed": 400,
+                "fade_in_speed": 400,
+                "slide_down_speed": 600,
+                "use_alt_layout": false,
+                "disable_resize": false,
+                "disable_zoom": false,
+                "force_show_nav": false,
+                "show_caption": true,
+                "loop_items": false,
+                "node_link_text": "View Image Details",
+                "node_link_target": false,
+                "image_count": "Image !current of !total",
+                "video_count": "Video !current of !total",
+                "page_count": "Page !current of !total",
+                "lite_press_x_close": "press \u003Ca href=\u0022#\u0022 onclick=\u0022hideLightbox(); return FALSE;\u0022\u003E\u003Ckbd\u003Ex\u003C\/kbd\u003E\u003C\/a\u003E to close",
+                "download_link_text": "",
+                "enable_login": false,
+                "enable_contact": false,
+                "keys_close": "c x 27",
+                "keys_previous": "p 37",
+                "keys_next": "n 39",
+                "keys_zoom": "z",
+                "keys_play_pause": "32",
+                "display_image_size": "original",
+                "image_node_sizes": "()",
+                "trigger_lightbox_classes": "",
+                "trigger_lightbox_group_classes": "",
+                "trigger_slideshow_classes": "",
+                "trigger_lightframe_classes": "",
+                "trigger_lightframe_group_classes": "",
+                "custom_class_handler": 0,
+                "custom_trigger_classes": "",
+                "disable_for_gallery_lists": true,
+                "disable_for_acidfree_gallery_lists": true,
+                "enable_acidfree_videos": true,
+                "slideshow_interval": 5000,
+                "slideshow_automatic_start": true,
+                "slideshow_automatic_exit": true,
+                "show_play_pause": true,
+                "pause_on_next_click": false,
+                "pause_on_previous_click": true,
+                "loop_slides": false,
+                "iframe_width": 600,
+                "iframe_height": 400,
+                "iframe_border": 1,
+                "enable_video": false
+            },
+            "CToolsModal": {
+                "loadingText": "Loading...",
+                "closeText": "Close Window",
+                "closeImage": "\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/www.bloodconnect.org\/sites\/all\/modules\/ctools\/images\/icon-close-window.png\u0022 alt=\u0022Close window\u0022 title=\u0022Close window\u0022 \/\u003E",
+                "throbber": "\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/www.bloodconnect.org\/sites\/all\/modules\/ctools\/images\/throbber.gif\u0022 alt=\u0022Loading\u0022 title=\u0022Loading...\u0022 \/\u003E"
+            },
+            "modal-popup-small": {
+                "modalSize": {
+                    "type": "fixed",
+                    "width": 300,
+                    "height": 300
+                },
+                "modalOptions": {
+                    "opacity": 0.85,
+                    "background": "#000"
+                },
+                "animation": "fadeIn",
+                "modalTheme": "ModalFormsPopup",
+                "throbber": "\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/www.bloodconnect.org\/sites\/all\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E",
+                "closeText": "Close"
+            },
+            "modal-popup-medium": {
+                "modalSize": {
+                    "type": "fixed",
+                    "width": 550,
+                    "height": 450
+                },
+                "modalOptions": {
+                    "opacity": 0.85,
+                    "background": "#000"
+                },
+                "animation": "fadeIn",
+                "modalTheme": "ModalFormsPopup",
+                "throbber": "\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/www.bloodconnect.org\/sites\/all\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E",
+                "closeText": "Close"
+            },
+            "modal-popup-large": {
+                "modalSize": {
+                    "type": "scale",
+                    "width": 0.8,
+                    "height": 0.8
+                },
+                "modalOptions": {
+                    "opacity": 0.85,
+                    "background": "#000"
+                },
+                "animation": "fadeIn",
+                "modalTheme": "ModalFormsPopup",
+                "throbber": "\u003Cimg typeof=\u0022foaf:Image\u0022 src=\u0022http:\/\/www.bloodconnect.org\/sites\/all\/modules\/modal_forms\/images\/loading_animation.gif\u0022 alt=\u0022Loading...\u0022 title=\u0022Loading\u0022 \/\u003E",
+                "closeText": "Close"
+            },
+            "hide_submit": {
+                "hide_submit_status": true,
+                "hide_submit_method": "disable",
+                "hide_submit_css": "hide-submit-disable",
+                "hide_submit_abtext": "",
+                "hide_submit_atext": "",
+                "hide_submit_hide_css": "hide-submit-processing",
+                "hide_submit_hide_text": "Processing...",
+                "hide_submit_hide_fx": false,
+                "hide_submit_reset_time": 5000
+            },
+            "urlIsAjaxTrusted": {
+                "\/plateletdonation": true,
+                "\/plateletdonation?destination=node\/2951": true
+            }
+        });
+        //--><!]]>
+    </script>
+
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-expand-md navbar-dark bg-danger pl-5 fixed-top" style="background-color: rgb(245, 10, 10);">
+            <img src="../images/logo.jpg" class="image-fluid" style="height:80px; width:80px; border-radius: 80px;" />
+            <a href="/" class="navbar-portal" style="text-decoration: none; color:white; font-size:40px;">जीवनप्रदाय <br><h6 style="margin-left: 0px; color: black; font: italic;">Innovation Responsibility And Humanism</h6></a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#tabmenu">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+            <div class="collapse navbar-collapse" id="tabmenu">
+                <ul class="navbar-nav pl-5 custom-nav" style="margin-left:6%; font-size:20px; color:rgb(8, 8, 7);">
+                    <li class="nav-item"><a href="/" class="nav-link">Home</a> </li>
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="container" style="margin-top:160px;">
+        <h1 style="color: red; ">Platelets Donation</h1>
+        <div class="content">
+            <div id="node-2951" class="node node-page clearfix" about="/plateletdonation" typeof="sioc:Item foaf:Document">
+
+
+                <span property="dc:title" content="About Platelet Donation" class="rdf-meta element-hidden"></span><span property="sioc:num_replies" content="0" datatype="xsd:integer" class="rdf-meta element-hidden"></span>
+
+                <div class="content">
+                    <div class="acc-box">
+
+                        <span data-mode="" class="acc-trigger">
+			<a href="#">What is platelet donation?</a>
+		</span>
+
+                        <div class="acc-container">
+
+                            <p>
+                                During platelet donation, a small portion of your blood (about 120 ml at a time), is drawn from your arm and passed through a sophisticated cell-separating machine. The machine collects the platelets and safely returns the remaining blood components,
+                                along with some saline back to your body. Platelet extraction, or collecting during donation, is also called 'platelet apheresis’.
+                            </p>
+
+                        </div>
+                        <!--/ .acc-container-->
+
+
+                        <span data-mode="" class="acc-trigger">
+			<a href="#">What are platelets?</a>
+		</span>
+
+                        <div class="acc-container">
+
+                            <p>
+                                Platelets are tiny, colorless, disc-shaped particles circulating in the blood, and they are essential for normal blood clotting.
+                            </p>
+
+                        </div>
+                        <!--/ .acc-container-->
+
+
+                        <span data-mode="" class="acc-trigger">
+			<a href="#">In which situation is platelet donation required?</a>
+		</span>
+
+                        <div class="acc-container">
+
+                            <p>
+                                Platelets are critically important for the survival of many patients with clotting problems (aplastic anemia, leukemia) or cancer, and patients who will undergo organ transplants or major surgeries like heart bypass grafts. Platelet dose from a single
+                                donor reduces the patient’s exposure to multiple donors and is therefore preferred by many physicians.
+
+                            </p>
+
+                        </div>
+                        <!--/ .acc-container-->
+
+                        <span data-mode="" class="acc-trigger">
+			<a href="#">What is the blood group compatibility for platelet donation?</a>
+		</span>
+
+                        <div class="acc-container">
+
+                            <p>
+                                ABO and Rh(D) identical platelet transfusion is ideal. Platelets collected from Rh(D) positive donors should be avoided for Rh(D) negative, non-immunosuppressed recipients. The small number of contaminating red cells may be sufficient to cause Rhesus
+                                immunization. Transfusing platelets from group O donors to group A, B or AB recipients may result in haemolysis (from anti-A and anti-B in group O plasma). Also avoid incompatible plasma transfusion.
+                            </p>
+
+                        </div>
+                        <!--/ .acc-container-->
+
+
+                        <span data-mode="" class="acc-trigger">
+			<a href="#">Should I be a Patelet Donor?</a>
+		</span>
+
+                        <div class="acc-container">
+
+                            <p>
+                                A single platelet donation can provide enough platelets for a full therapeutic dose for a patient in need. In fact, some platelet donations yield enough platelets for two or three therapeutic doses. By contrast, it takes four to six whole blood donations
+                                to produce a single therapeutic dose.
+
+                            </p>
+
+                        </div>
+                        <!--/ .acc-container-->
+
+
+                        <span data-mode="" class="acc-trigger">
+			<a href="#">How often can I donate platelets?</a>
+		</span>
+
+                        <div class="acc-container">
+
+                            <p>
+                                Platelet donors can donate upto 24 times a year with a minimum interval of 7 days between donations.
+
+                            </p>
+
+                        </div>
+                        <!--/ .acc-container-->
+
+
+                        <span data-mode="" class="acc-trigger">
+			<a href="#">How long does a platelet donation take?</a>
+		</span>
+
+                        <div class="acc-container">
+
+                            <p>
+                                A platelet donation takes upto 90 minutes. You will be asked to undergo a Donor Health Check (as with blood donation) first and encouraged to have a short rest and drink afterwards. You can expect the whole process to take up to 2 hours.
+
+                            </p>
+
+                        </div>
+                        <!--/ .acc-container-->
+
+
+                        <span data-mode="" class="acc-trigger">
+			<a href="#">Is the donor eligibility criteria same for platelet and blood donation?</a>
+		</span>
+
+                        <div class="acc-container">
+
+                            <p>
+                                Eligibility criteria in terms of age and health are the same for blood and platelet donors, but for platelet donation there is a need to assess donor’s height and weight ratio to check blood volume. There is an additional medication rule: a donor cannot
+                                donate platelets if he/she has taken Aspirin, aspirin-containing medications (such as Disprin), piroxicam (Dolonex, Pirox), or any other Non-Steroidal Anti-Inflammatory Drugs (such as, Ibuprofen, Diclofenac) in the last
+                                48 hours. This is because these drugs affect the potency and performance of the platelets and may result in bleeding during collection of blood components.
+
+                            </p>
+
+                        </div>
+                        <!--/ .acc-container-->
+
+
+                        <span data-mode="" class="acc-trigger">
+			<a href="#">Is platelet donation safe?</a>
+		</span>
+
+                        <div class="acc-container">
+
+                            <p>
+                                Yes. Platelet donation is performed in a highly-controlled, sterile environment by professionally trained staff. All the platelet collection equipments are sterilized and equipment that is in contact with the donor's blood is used only once, eliminating
+                                the possibility of transmitting any microbial infection.
+
+                            </p>
+
+                        </div>
+                        <!--/ .acc-container-->
+
+
+                        <span data-mode="" class="acc-trigger">
+			<a href="#">Can platelets be taken from whole blood donation?</a>
+		</span>
+
+                        <div class="acc-container">
+
+                            <p>
+                                Yes. Platelets can be taken from a whole blood donation but when you make a platelet donation using automated technology you donate 6 to 10 times the amount of platelets than can be obtained from a whole blood donation. A patient needing platelets will
+                                require that amount for one treatment. So, instead of six to ten blood donors, it takes just one platelet donor to provide a patient with one treatment of platelets.
+
+                            </p>
+
+                        </div>
+                        <!--/ .acc-container-->
+
+
+                        <span data-mode="" class="acc-trigger">
+			<a href="#">Can I donate blood after donating platelets?</a>
+		</span>
+
+                        <div class="acc-container">
+
+                            <p>
+                                Yes. You can donate blood at least 72 hours after donating platelets. In an eight week period, you can make one blood donation and one platelet donation or six platelet donations. It is recommended for a platelet donor to join the platelet panel in order
+                                to help supply platelets to patients on frequent basis, rather than donating other components alternatively, so that patients' requirement(s) is managed and fulfilled accordingly and effectively.
+                            </p>
+
+                        </div>
+                        <!--/ .acc-container-->
+
+
+                        <span data-mode="" class="acc-trigger">
+			<a href="#">Can plasma be collected during platelet donation?</a>
+		</span>
+
+                        <div class="acc-container">
+
+                            <p>
+                                Yes. Plasma can be collected simultaneously with a platelet donation. Plasma can be collected every 28 days, up to 13 times a year.
+
+                            </p>
+
+                        </div>
+                        <!--/ .acc-container-->
+
+                        <span data-mode="" class="acc-trigger">
+			<a href="#">How long can the platelets be stored?</a>
+		</span>
+
+                        <div class="acc-container">
+
+                            <p>
+                                Platelets can be stored only for 5 days.
+
+                            </p>
+
+                        </div>
+                        <!--/ .acc-container-->
+
+                    </div>
+                    <!--/ .acc-box-->
+
+                    <b><font color=#b11c1c>A donor must always seek advice from a blood donation personnel/health professional about any existing medical condition and/or any long-term medication prior to donation.</font></b> </div>
+
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    
+ <!-- Start Footer-->
+ <footer class="container-fluid text-black mt-5 " style="border-top: 3px solid #DC3545; background-color: rgb(240, 219, 219); margin-bottom:0px; height:100px;">
+    <div class="container ">
+        <!-- Start Footer Container -->
+        <div class="row py-3 ">
+            <!-- Start Footer Row -->
+            <div class="col-md-6 ">
+                <!-- Start Footer 1st Column -->
+                <div>
+                    <span>Follow Us: </span>
+                    <a href="https://www.facebook.com/team.jeevanpradaya/"><img src="../images/fb.png " alt="facebook " style="height:20px; width:20px; "> </img>
+                    </a>
+                    <a href="https://twitter.com/jeevanpradaya?s=09"><img src="../images/twit.png " alt="twitter " style="height:20px; width:20px; "> </img>
+                    </a>
+                    <a href=" https://www.instagram.com/team_jeevanpradaya/?igshid=1jqj5xv3a1yq9 "><img src="../images/insta.png " alt="instagram " style="height:20px; width:20px; "> </img>
+                    </a>
+                </div>
+                <!-- End Footer 1st Column -->
+
+                <div class="col-md-6 text-right ">
+                    <!-- Start Footer 2nd Column -->
+                    <small> Designed by <a href="https://www.gcoeara.ac.in " target="_blank ">GCOEARA STUDENTS </a> &copy; 2020. </small>
+                </div>
+                <!-- End Footer 2nd Column -->
+            </div>
+            <!-- End Footer Row -->
+        </div>
+        <!-- End Footer Container -->
+</footer>
+<!-- End Footer -->
+
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js " integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49 " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js " integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy " crossorigin="anonymous "></script>
+
+</body>
+
+
+
+
+
+</html>

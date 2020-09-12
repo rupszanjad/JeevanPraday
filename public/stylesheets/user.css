@@ -1,0 +1,90 @@
+ul li a {
+    display: block;
+    padding: 8px 25px;
+    border: 1px white;
+    text-decoration: none;
+    color: rgb(216, 201, 201);
+}
+
+ul li a:hover {
+    color: #fff;
+    border: 1px white;
+    text-decoration: none;
+}
+
+ul li ul.subnav {
+    text-decoration: none;
+    display: none;
+    color: white;
+    font-size: 20px;
+}
+
+ul li:hover ul.subnav {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 2000px) {
+    .navbar-portal {
+        font-size: 60px;
+        margin-left: 30px;
+    }
+    .image-fluid {
+        border-radius: 50%;
+        height: 120px;
+        width: 120px;
+    }
+}
+
+@media only screen and (max-width: 1500px) {
+    .navbar-portal {
+        font-size: 40px;
+        margin-left: 20px;
+    }
+    .image-fluid {
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .navbar-portal {
+        font-size: 35px;
+        margin-left: 0px;
+    }
+    .image-fluid {
+        height: 70px;
+        width: 70px;
+        border-radius: 50%;
+    }
+}
+
+body {
+    padding-top: 60px;
+}
+
+@media (max-width: 979px) {
+    body {
+        padding-top: 0px;
+    }
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
